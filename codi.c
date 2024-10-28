@@ -105,5 +105,49 @@ float Infininorm( float M[N][N] ){
 }
 
 //ex9
+float Onenorm( float M[N][N] ){
+    int i, ii;
+    float comp, acum, m;
+    comp = 0;
+    for( i = 0; i < N; i++ ){
+       acum = 0;
+       for (ii = 0; ii < N; ii++){
+           m= fabs(M[ii][i]);
+           acum = m + acum;
+       }
+       if (acum > comp){
+           comp = acum;
+       }
+    }
+    return(comp);
+}
 
 
+//ex10
+float NormFrobenius( float M[N][N] ){
+    int i, ii;
+    float acum, m;
+    for( i = 0; i < N; i++ ){
+        for (ii = 0; ii < N; ii++){
+            m= pow(M[i][ii], 2);
+            acum = m + acum;
+        }
+    }
+    return(acum);
+}
+
+
+//ex11
+int DiagonalDom( float M[N][N] ){
+    int i, ii, DD;
+    float acum, m;
+    ii=0;
+    acum =0;
+    for( i = 0; i < N; i++ ){
+        if (ii!=i){
+            m = fabs(M[ii][i]);
+            acum = acum + m;
+        }
+        ii= ii+1;
+    }
+}
