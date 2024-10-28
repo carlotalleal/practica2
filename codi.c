@@ -1,3 +1,4 @@
+//ctrl S guarda
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -34,6 +35,14 @@ for( i = from; i < numel; i++ ){
 }
 }
 
+//exercici 2
+void PrintRow( float mat[N][N], int row, int from, int numel ) {
+int i;
+for (i=from;i<numel;i++){
+    printf("%f ",mat[row][i]);
+}
+}
+
 //ex3:
 void MultEscalar( float vect[N], float vectres[N], float alfa ){
     int i;
@@ -53,6 +62,17 @@ float Scalar( float vect1[N], float vect2[N] ){
     return(pe);
 }
 
+//exercici 5
+float Magnitude( float vect[N] ){
+    int i;
+    float sum=0;
+    for (i =0 ;i < N;i++){
+        sum=sum+(vect[i]*vect[i]);
+    }
+    float res=sqrt(sum);
+    return (res);
+}
+
 //ex6:
 int Ortogonal( float vect1[N], float vect2[N] ){
     int ort;
@@ -65,3 +85,25 @@ int Ortogonal( float vect1[N], float vect2[N] ){
     }
     return(ort);
 }
+
+//ex8
+float Infininorm( float M[N][N] ){
+     int i, ii;
+     float comp, acum, m;
+     comp = 0;
+     for( i = 0; i < N; i++ ){
+        acum = 0;
+        for (ii = 0; ii < N; ii++){
+            m= fabs(M[i][ii]);
+            acum = m + acum;
+        }
+        if (acum > comp){
+            comp = acum;
+        }
+     }
+     return(comp);
+}
+
+//ex9
+
+
