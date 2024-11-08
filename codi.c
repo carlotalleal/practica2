@@ -1,6 +1,7 @@
 //ctrl S guarda
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 #define N 512
 
@@ -291,7 +292,7 @@ int main(){
         printf("La matriu Mat és diagonal dominant");
     }
     else{
-        Printf("La matriu Mat no és dagonal principal");
+        printf("La matriu Mat no és diagonal principal");
     }
 
 
@@ -341,9 +342,9 @@ int main(){
     float r[N];
     MultEscalar(V3, r, 2); 
     printf("Els elements 0 al 9 i 256 al 265 del resultat de multiplicar V3x2.0 són:");
-    printf( "%d %d %d %d %d %d %d %d %d %d\n", 
+    printf( "%f %f %f %f %f %f %f %f %f %f\n", 
            V3[1], V3[2], V3[3], V3[4], V3[5], V3[6], V3[7], V3[8], V3[9], V3[10]);
-    printf( "%d %d %d %d %d %d %d %d %d %d\n", 
+    printf( "%f %f %f %f %f %f %f %f %f %f\n", 
            V3[256], V3[257], V3[258], V3[259], V3[260], V3[261], V3[262], V3[263], V3[264], V3[265]);
 
 //i
@@ -351,17 +352,17 @@ int main(){
     Projection(V2,V3, proj);
     Projection(V1,V2, proj2);
     printf("Els elements 0 a 9 del resultat de la projecció de V2 sobre V3 són:");
-    printf( "%d %d %d %d %d %d %d %d %d %d\n", 
+    printf( "%f %f %f %f %f %f %f %f %f %f\n", 
            proj[1], proj[2], proj[3], proj[4], proj[5], proj[6], proj[7], proj[8], proj[9], proj[10]);
     printf("Els elements 0 a 9 del resultat de la projecció de V1 sobre V2 són:");
-    printf( "%d %d %d %d %d %d %d %d %d %d\n", 
+    printf( "%f %f %f %f %f %f %f %f %f %f\n", 
            proj2[1], proj2[2], proj2[3], proj2[4], proj2[5], proj2[6], proj2[7], proj2[8], proj2[9], proj2[10]);
 
 //j
     float vect3[N];
     Matriu_x_Vector (Mat, V2,vect3);
     printf("Els elements 0 a 9 del resultat de la multiplicació de Mat per v2 són:");
-    printf( "%d %d %d %d %d %d %d %d %d %d\n", 
+    printf( "%f %f %f %f %f %f %f %f %f %f\n", 
            vect3[1], vect3[2], vect3[3], vect3[4], vect3[5], vect3[6], vect3[7], vect3[8], vect3[9], vect3[10]);
 
 //k
@@ -369,10 +370,10 @@ int main(){
     Jacobi( MatDD, V3, vr1, 1);
     Jacobi( MatDD, V3, vr2, 1000);
     printf("Els elements 0 a 9 de la solució (1 iter) del sistema d'equacions són:");
-    printf( "%d %d %d %d %d %d %d %d %d %d\n", 
+    printf( "%f %f %f %f %f %f %f %f %f %f\n", 
            vr1[1], vr1[2], vr1[3], vr1[4], vr1[5], vr1[6], vr1[7], vr1[8], vr1[9], vr1[10]);
     printf("Els elements 0 a 9 de la solució (1000 iters) del sistema d'equacions són:");
-    printf( "%d %d %d %d %d %d %d %d %d %d\n", 
+    printf( "%f %f %f %f %f %f %f %f %f %f\n", 
            vr2[1], vr2[2], vr2[3], vr2[4], vr2[5], vr2[6], vr2[7], vr2[8], vr2[9], vr2[10]);
 
 
