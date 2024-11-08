@@ -107,7 +107,7 @@ int pe, mod, temp;
 pe= Scalar (vect1,vect2); 
 mod= Magnitude (vect2);
 //fem el producte escalar de v1 i v2 i el módul de v2
-temp= pe/mod;
+temp= pe/(mod*mod);
 //dividim els resultats de les ordres anteriors
 MultEscalar(vect2,vectres,temp);
 //i fem el multiescalar amb el temp i el vector 2 (vecttres es a resposta)
@@ -173,7 +173,8 @@ float NormFrobenius( float M[N][N] ){
 //li sumem al acumulat
         }
     }
-    return(acum);
+    return(sqrt(acum));
+//li fem la arrel i retornem el valor
 }
 
 //exercici 11
@@ -195,7 +196,7 @@ int DiagonalDom( float M[N][N] ){
 //s'acumula la línea sense la ordre anterior
             }
         }
-        if (acum < M[i][i])
+        if (acum >= M[i][i])
             DD= 0;
 //es mira si es de diagonal dominant o no
     }
@@ -256,6 +257,7 @@ int Jacobi( float M[N][N] , float vect[N], float vectres[N], unsigned iter ){
     else{
         Jb= 0;
     } 
+    return(Jb);
 }
 
 int main(){
