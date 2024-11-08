@@ -195,7 +195,7 @@ int DiagonalDom( float M[N][N] ){
 //s'acumula la línea sense la ordre anterior
             }
         }
-        if (acum < M[i][i]);
+        if (acum < M[i][i])
             DD= 0;
 //es mira si es de diagonal dominant o no
     }
@@ -211,7 +211,7 @@ void Matriu_x_Vector (float M[N][N], float vect1[N], float vectres[N]){
     for( i = 0; i < N; i++ ){
         for (ii = 0; ii < N; ii++){
 //fem un doble for, un per files i un altre per columnes
-            m= M[i][ii]*vect1[i];
+            m= M[i][ii]*vect1[ii];
 //multipliquem cada element de la matriu per el índex del vecrtor corresponent
             acum = acum + m;
 //sumem al acumulat
@@ -260,7 +260,7 @@ int Jacobi( float M[N][N] , float vect[N], float vectres[N], unsigned iter ){
 
 int main(){
     int i, j;
-    float Mat[i][j], MatDD[i][j], V1[N], V2[N], V3[N];
+    float Mat[N][N], MatDD[N][N], V1[N], V2[N], V3[N];
     
     //a
     InitData();
